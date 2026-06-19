@@ -1,0 +1,50 @@
+# Python bytecode/cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables/secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Test/coverage output
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Type checker/cache tools
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+
+# Build/package output
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Jupyter/IPython
+.ipynb_checkpoints/
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

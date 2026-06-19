@@ -1,0 +1,5 @@
+fastapi
+databases[aiosqlite]
+sqlalchemy
+uvicorn
+PyJWT

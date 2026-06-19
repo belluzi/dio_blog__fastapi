@@ -70,6 +70,24 @@ A documentacao interativa do FastAPI pode ser acessada em:
 http://127.0.0.1:8000/docs
 ```
 
+## Deploy no Render
+
+Configure o servico usando a raiz do repositorio como `Root Directory`. Nao use `dio__blog` como raiz do deploy, porque esse diretorio e um pacote Python importado pela aplicacao.
+
+Build command:
+
+```bash
+pip install -r requirements.txt
+```
+
+O comando de inicializacao deve apontar para o modulo dentro do pacote `dio__blog`:
+
+```bash
+uvicorn dio__blog.main:app --host 0.0.0.0 --port $PORT
+```
+
+Se o Render estiver configurado com `uvicorn main:app`, ou se o `Root Directory` estiver como `dio__blog`, a aplicacao nao sobe porque o arquivo `main.py` usa imports relativos dentro do pacote `dio__blog`.
+
 ## Autenticacao
 
 Para acessar as rotas de posts, gere um token JWT pela rota de login:
@@ -101,6 +119,13 @@ Authorization: Bearer token_jwt
 ```
 
 ## Endpoints
+
+### Geral
+
+| Metodo | Rota | Descricao |
+| --- | --- | --- |
+| GET | `/` | Retorna informacoes basicas da API |
+| GET | `/health` | Retorna o status da aplicacao |
 
 ### Autenticacao
 
